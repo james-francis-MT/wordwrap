@@ -11,7 +11,7 @@ class Wordwrap
         if string.length <= width
             return string
         else
-            space = string.index(" ")
+            space = string[0..width].rindex(" ")
             if space != nil
                 return break_between(string, space, space+1, width)
             else
