@@ -27,6 +27,19 @@ describe Wordwrap do
             end
         end
 
+        context "given string with two space" do
+            it "breaks line on second space" do 
+                expect(described_class.new.word_wrap("hi hi world", 5)).to eq("hi hi\nworld")
+                expect(described_class.new.word_wrap("hi hi world", 6)).to eq("hi hi\nworld")
+            end
+        end
+
+        context "given string with three spaces" do
+            it "breaks line on second space" do 
+                expect(described_class.new.word_wrap("hi hi to yu", 5)).to eq("hi hi\nto yu")
+            end
+        end
+
     end
 end
 
