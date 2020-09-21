@@ -46,7 +46,7 @@ describe Wordwrap do
         context "given string with two space" do
             it "breaks line on second space" do 
                 expect(described_class.new.word_wrap("hi hi world", 5)).to eq("hi hi\nworld")
-                #expect(described_class.new.word_wrap("hi hi world", 6)).to eq("hi hi\nworld")
+                expect(described_class.new.word_wrap("hi hi world", 6)).to eq("hi hi\nworld")
             end
         end
 
