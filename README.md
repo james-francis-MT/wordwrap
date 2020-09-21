@@ -1,3 +1,3 @@
 # wordwrap
 
-Welcome
+wordwrap kata
