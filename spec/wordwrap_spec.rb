@@ -50,12 +50,18 @@ describe Wordwrap do
             end
         end
 
-        # context "given string with three spaces" do
-        #     it "breaks line on second space" do 
-        #         expect(described_class.new.word_wrap("hi hi to yu", 5)).to eq("hi hi\nto yu")
-        #         expect(described_class.new.word_wrap("hi hi to yu", 6)).to eq("hi hi\nto yu")
-        #     end
-        # end
+        context "given string with three spaces" do
+            it "breaks line on second space" do 
+                expect(described_class.new.word_wrap("hi hi to yu", 5)).to eq("hi hi\nto yu")
+                expect(described_class.new.word_wrap("hi hi to yu", 6)).to eq("hi hi\nto yu")
+            end
+        end
+
+        context "given complex" do
+            it "breaks line correctly" do 
+                expect(described_class.new.word_wrap("Hello there welcome to my kata, isn't it a wonderful kata?", 12)).to eq("Hello there\nwelcome to\nmy kata,\nisn't it a\nwonderful\nkata?")
+            end
+        end
 
     end
 end
